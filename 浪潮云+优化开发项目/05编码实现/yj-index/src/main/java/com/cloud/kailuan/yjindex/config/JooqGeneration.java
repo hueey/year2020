@@ -12,7 +12,7 @@ import java.io.File;
  */
 public class JooqGeneration {
     public static void main(String[] args) throws Exception {
-        Configuration configuration = new Configuration();
+        var configuration = new Configuration();
         configuration
                 .withJdbc(new Jdbc()
                         .withDriver("com.mysql.cj.jdbc.Driver")

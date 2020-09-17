@@ -11,7 +11,7 @@ public class JooqConfig {
 
     @Bean
     public Settings settings() {
-        Settings settings = new Settings();
+        var settings = new Settings();
         settings
                 //关键字设置成大写，方便阅读，默认为小写
                 .withRenderKeywordCase(RenderKeywordCase.UPPER)
