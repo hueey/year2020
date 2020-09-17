@@ -5,7 +5,7 @@ spring:
     name:  kl-index
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://116.62.16.146:3306/test??serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowMultiQueries=true
+    url: jdbc:mysql://116.62.16.146:3306/lc??serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowMultiQueries=true
     username: ts
     password: Ts-123456
   jooq:
