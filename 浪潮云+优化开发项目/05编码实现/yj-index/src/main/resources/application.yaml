@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name:  kl-index
+    name:  yj-index
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://116.62.16.146:3306/lc?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowMultiQueries=true
