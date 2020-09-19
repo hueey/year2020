@@ -1,0 +1,24 @@
+1、身份集成，调用接口
+地址：`${GetCodeUrl}?client_id=${ClientID}&response_type=code&redirect_uri=${redirectUrl}` + state;
+其中：GetCodeUrl：http://cloud-id.kailuan.com.cn/oauth2.0/authorize
+         ClientID：   开滦认证的id
+         redirectUrl：    window.location.protocol + "//" + host + "/EPCloudPlus/Service/ECProfilesService.asmx/GetProfile";
+         state ：    "&state=" + encodeURIComponent(认证成功返回页面url);
+
+返回值：解析出userid，orgpath, roleids
+
+注：初次登陆集成身份，不需要次次都调用。
+
+2、获取集团新闻
+先配置好集团新闻视图，找到视图id  viewid。
+地址：window.location.protocol + "//" + window.location.host + "/EPCloudPlus/Service/ECContentServices.asmx/GetContents"
+方式：POST
+参数：tagviewId: viewid，
+          pageindex: 1,   //页码从1开始
+          userid: 身份集成返回userid,
+          orgpath: 身份集成返回orgpath, 
+          roleids: 身份集成返回roleids
+返回值：新闻列表Json
+
+
+
