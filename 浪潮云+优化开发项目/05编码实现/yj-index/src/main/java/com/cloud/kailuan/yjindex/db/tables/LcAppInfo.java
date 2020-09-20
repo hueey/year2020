@@ -27,12 +27,12 @@ import org.jooq.impl.TableImpl;
 
 
 /**
- * app应用模块配置
+ * 安装包管理模块
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcAppInfo extends TableImpl<LcAppInfoRecord> {
 
-    private static final long serialVersionUID = -1366009434;
+    private static final long serialVersionUID = -2101729825;
 
     /**
      * The reference instance of <code>lc.lc_app_info</code>
@@ -138,7 +138,7 @@ public class LcAppInfo extends TableImpl<LcAppInfoRecord> {
     }
 
     private LcAppInfo(Name alias, Table<LcAppInfoRecord> aliased, Field<?>[] parameters) {
-        super(alias, null, aliased, parameters, DSL.comment("app应用模块配置"), TableOptions.table());
+        super(alias, null, aliased, parameters, DSL.comment("安装包管理模块\r\n"), TableOptions.table());
     }
 
     public <O extends Record> LcAppInfo(Table<O> child, ForeignKey<O, LcAppInfoRecord> key) {

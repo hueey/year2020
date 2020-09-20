@@ -6,7 +6,6 @@ package com.cloud.kailuan.yjindex.db;
 
 import com.cloud.kailuan.yjindex.db.tables.LcAppInfo;
 import com.cloud.kailuan.yjindex.db.tables.LcAppModuleConf;
-import com.cloud.kailuan.yjindex.db.tables.LcBootBannerConf;
 import com.cloud.kailuan.yjindex.db.tables.LcFileInfo;
 import com.cloud.kailuan.yjindex.db.tables.LcHeaderConf;
 import com.cloud.kailuan.yjindex.db.tables.LcHomeBannerConf;
@@ -20,7 +19,8 @@ import com.cloud.kailuan.yjindex.db.tables.LcInfoBannerConf;
 public class Tables {
 
     /**
-     * app应用模块配置
+     * 安装包管理模块
+
      */
     public static final LcAppInfo LC_APP_INFO = LcAppInfo.LC_APP_INFO;
 
@@ -28,11 +28,6 @@ public class Tables {
      * app应用模块配置
      */
     public static final LcAppModuleConf LC_APP_MODULE_CONF = LcAppModuleConf.LC_APP_MODULE_CONF;
-
-    /**
-     * 引导页配置
-     */
-    public static final LcBootBannerConf LC_BOOT_BANNER_CONF = LcBootBannerConf.LC_BOOT_BANNER_CONF;
 
     /**
      * The table <code>lc.lc_file_info</code>.

@@ -16,12 +16,12 @@ import org.jooq.impl.UpdatableRecordImpl;
 
 
 /**
- * app应用模块配置
+ * 安装包管理模块
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcAppInfoRecord extends UpdatableRecordImpl<LcAppInfoRecord> implements Record13<Long, String, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> {
 
-    private static final long serialVersionUID = 1651382199;
+    private static final long serialVersionUID = 303560586;
 
     /**
      * Setter for <code>lc.lc_app_info.id</code>.

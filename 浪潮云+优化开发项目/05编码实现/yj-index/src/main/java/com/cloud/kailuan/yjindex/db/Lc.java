@@ -6,7 +6,6 @@ package com.cloud.kailuan.yjindex.db;
 
 import com.cloud.kailuan.yjindex.db.tables.LcAppInfo;
 import com.cloud.kailuan.yjindex.db.tables.LcAppModuleConf;
-import com.cloud.kailuan.yjindex.db.tables.LcBootBannerConf;
 import com.cloud.kailuan.yjindex.db.tables.LcFileInfo;
 import com.cloud.kailuan.yjindex.db.tables.LcHeaderConf;
 import com.cloud.kailuan.yjindex.db.tables.LcHomeBannerConf;
@@ -26,7 +25,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Lc extends SchemaImpl {
 
-    private static final long serialVersionUID = -496860829;
+    private static final long serialVersionUID = -32415691;
 
     /**
      * The reference instance of <code>lc</code>
@@ -34,7 +33,8 @@ public class Lc extends SchemaImpl {
     public static final Lc LC = new Lc();
 
     /**
-     * app应用模块配置
+     * 安装包管理模块
+
      */
     public final LcAppInfo LC_APP_INFO = LcAppInfo.LC_APP_INFO;
 
@@ -42,11 +42,6 @@ public class Lc extends SchemaImpl {
      * app应用模块配置
      */
     public final LcAppModuleConf LC_APP_MODULE_CONF = LcAppModuleConf.LC_APP_MODULE_CONF;
-
-    /**
-     * 引导页配置
-     */
-    public final LcBootBannerConf LC_BOOT_BANNER_CONF = LcBootBannerConf.LC_BOOT_BANNER_CONF;
 
     /**
      * The table <code>lc.lc_file_info</code>.
@@ -86,7 +81,6 @@ public class Lc extends SchemaImpl {
         return Arrays.<Table<?>>asList(
             LcAppInfo.LC_APP_INFO,
             LcAppModuleConf.LC_APP_MODULE_CONF,
-            LcBootBannerConf.LC_BOOT_BANNER_CONF,
             LcFileInfo.LC_FILE_INFO,
             LcHeaderConf.LC_HEADER_CONF,
             LcHomeBannerConf.LC_HOME_BANNER_CONF,
