@@ -1,8 +1,9 @@
 package com.cloud.kailuan.yjindex.dao.impl;
 
+import cn.hutool.core.lang.generator.UUIDGenerator;
 import com.cloud.kailuan.yjindex.dao.ILcFileInfoDao;
-import com.cloud.kailuan.yjindex.db.tables.LcFileInfo;
-import com.cloud.kailuan.yjindex.db.tables.records.LcFileInfoRecord;
+import com.cloud.kailuan.yjindex.db.Tables;
+import com.cloud.kailuan.yjindex.entity.LcFileInfoEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,18 @@ public class LcFileInfoDaoImpl implements ILcFileInfoDao {
 
     @Autowired
     private DSLContext dsl;
+    @Autowired
 
     @Override
-    public void save(LcFileInfo lcFileInfo) {
-//        dsl.insertInto( lcFileInfo );
-//
-//        LcFileInfoRecord lcFileInfoRecord = new LcFileInfoRecord();
-//        lcFileInfoRecord.setId( );
+    public void save(LcFileInfoEntity lcFileInfoEntity) {
+      dsl.insertInto(Tables.LC_FILE_INFO)
+              .columns(
+                      Tables.LC_FILE_INFO.ID,
+                      Tables.LC_FILE_INFO.BIZ_MODULE_TYPE
+                      )
+              .values(
+                      new DefaultIdentifierGenerator().nextId(null),
+                      lcFileInfoEntity.getBizModuleType()
+              ).execute();
     }
 }
