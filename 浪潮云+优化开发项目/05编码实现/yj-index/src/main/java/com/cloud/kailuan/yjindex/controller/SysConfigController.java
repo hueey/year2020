@@ -43,7 +43,7 @@ public class SysConfigController {
     @ApiOperation(value="保存首页配置")
     @PostMapping("/saveInstallPackageInfo")
     @ResponseBody
-    public R<LcAppInfoVo> saveInstallPackage( LcAppInfoVo lcAppInfoVo ) {
+    public R<LcAppInfoVo> saveInstallPackage(@RequestBody LcAppInfoVo lcAppInfoVo ) {
         sysConfigService.saveInstallPackage( lcAppInfoVo );
         return R.ok(  );
     }

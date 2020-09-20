@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class LcInfoBannerConfVo {
 
-    @ApiModelProperty(value = "主键", dataType = "Long", required = false)
+    @ApiModelProperty(value = "主键", required = false)
     private Long id;
 
     @ApiModelProperty(value = "应用标题", required = false)
