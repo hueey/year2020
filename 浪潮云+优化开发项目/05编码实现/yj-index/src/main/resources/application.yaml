@@ -15,19 +15,19 @@ spring:
       client:
         provider:
           customer:
-            authorization-uri: https://id.inspuronline.com/oauth2.0/authorize
-            token-uri: https://id.inspuronline.com/oauth2.0/token
-            user-info-uri: https://id.inspuronline.com/oauth2.0/user-info
+            authorization-uri: http://cloud-id.kailuan.com.cn/oauth2.0/authorize
+            token-uri: http://cloud-id.kailuan.com.cn/oauth2.0/token
+            user-info-uri: http://cloud-id.kailuan.com.cn/oauth2.0/user-info
             user-info-authentication-method: header
             user-name-attrivute: name
         registration:
           app:
-            client-id: 0568c540-0456-4eb0-95e9-319ebe6aaf4a
-            client-secret: 91312051-6b42-4001-a17e-af2b86bc1c0a
+            client-id: f8abee75-ca6b-42da-92f4-aed5101947b3
+            client-secret: 8f80c265-03b1-4268-80df-90fba1a4b6c8
             client-name: app
             provider: customer
             scope: user
-            redirect-uri: http://116.62.16.146:8080
+            redirect-uri: http://localhost:8080/test/test
             client-authentication-method: basic
             authorization-grant-type: authorization_code
 file-server:
