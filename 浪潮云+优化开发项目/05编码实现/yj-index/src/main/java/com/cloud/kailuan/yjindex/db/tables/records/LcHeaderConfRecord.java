@@ -6,10 +6,12 @@ package com.cloud.kailuan.yjindex.db.tables.records;
 
 import com.cloud.kailuan.yjindex.db.tables.LcHeaderConf;
 
+import java.time.LocalDateTime;
+
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record4;
-import org.jooq.Row4;
+import org.jooq.Record11;
+import org.jooq.Row11;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -17,9 +19,9 @@ import org.jooq.impl.UpdatableRecordImpl;
  * app头部配置
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> implements Record4<Long, String, String, String> {
+public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> implements Record11<Long, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> {
 
-    private static final long serialVersionUID = 1231175706;
+    private static final long serialVersionUID = -1979468767;
 
     /**
      * Setter for <code>lc.lc_header_conf.id</code>.
@@ -50,31 +52,129 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
     }
 
     /**
+     * Setter for <code>lc.lc_header_conf.rgb_color</code>. 颜色值
+     */
+    public void setRgbColor(String value) {
+        set(2, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.rgb_color</code>. 颜色值
+     */
+    public String getRgbColor() {
+        return (String) get(2);
+    }
+
+    /**
      * Setter for <code>lc.lc_header_conf.logo_file_url</code>.
      */
     public void setLogoFileUrl(String value) {
-        set(2, value);
+        set(3, value);
     }
 
     /**
      * Getter for <code>lc.lc_header_conf.logo_file_url</code>.
      */
     public String getLogoFileUrl() {
-        return (String) get(2);
+        return (String) get(3);
     }
 
     /**
      * Setter for <code>lc.lc_header_conf.bg_file_url</code>.
      */
     public void setBgFileUrl(String value) {
-        set(3, value);
+        set(4, value);
     }
 
     /**
      * Getter for <code>lc.lc_header_conf.bg_file_url</code>.
      */
     public String getBgFileUrl() {
-        return (String) get(3);
+        return (String) get(4);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.del_flag</code>.
+     */
+    public void setDelFlag(Byte value) {
+        set(5, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.del_flag</code>.
+     */
+    public Byte getDelFlag() {
+        return (Byte) get(5);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.create_by</code>.
+     */
+    public void setCreateBy(String value) {
+        set(6, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.create_by</code>.
+     */
+    public String getCreateBy() {
+        return (String) get(6);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.create_date</code>.
+     */
+    public void setCreateDate(LocalDateTime value) {
+        set(7, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.create_date</code>.
+     */
+    public LocalDateTime getCreateDate() {
+        return (LocalDateTime) get(7);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.update_by</code>.
+     */
+    public void setUpdateBy(String value) {
+        set(8, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.update_by</code>.
+     */
+    public String getUpdateBy() {
+        return (String) get(8);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.update_date</code>.
+     */
+    public void setUpdateDate(LocalDateTime value) {
+        set(9, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.update_date</code>.
+     */
+    public LocalDateTime getUpdateDate() {
+        return (LocalDateTime) get(9);
+    }
+
+    /**
+     * Setter for <code>lc.lc_header_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public void setStatus(String value) {
+        set(10, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_header_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public String getStatus() {
+        return (String) get(10);
     }
 
     // -------------------------------------------------------------------------
@@ -87,17 +187,17 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
     }
 
     // -------------------------------------------------------------------------
-    // Record4 type implementation
+    // Record11 type implementation
     // -------------------------------------------------------------------------
 
     @Override
-    public Row4<Long, String, String, String> fieldsRow() {
-        return (Row4) super.fieldsRow();
+    public Row11<Long, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row11) super.fieldsRow();
     }
 
     @Override
-    public Row4<Long, String, String, String> valuesRow() {
-        return (Row4) super.valuesRow();
+    public Row11<Long, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> valuesRow() {
+        return (Row11) super.valuesRow();
     }
 
     @Override
@@ -112,12 +212,47 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
 
     @Override
     public Field<String> field3() {
-        return LcHeaderConf.LC_HEADER_CONF.LOGO_FILE_URL;
+        return LcHeaderConf.LC_HEADER_CONF.RGB_COLOR;
     }
 
     @Override
     public Field<String> field4() {
+        return LcHeaderConf.LC_HEADER_CONF.LOGO_FILE_URL;
+    }
+
+    @Override
+    public Field<String> field5() {
         return LcHeaderConf.LC_HEADER_CONF.BG_FILE_URL;
+    }
+
+    @Override
+    public Field<Byte> field6() {
+        return LcHeaderConf.LC_HEADER_CONF.DEL_FLAG;
+    }
+
+    @Override
+    public Field<String> field7() {
+        return LcHeaderConf.LC_HEADER_CONF.CREATE_BY;
+    }
+
+    @Override
+    public Field<LocalDateTime> field8() {
+        return LcHeaderConf.LC_HEADER_CONF.CREATE_DATE;
+    }
+
+    @Override
+    public Field<String> field9() {
+        return LcHeaderConf.LC_HEADER_CONF.UPDATE_BY;
+    }
+
+    @Override
+    public Field<LocalDateTime> field10() {
+        return LcHeaderConf.LC_HEADER_CONF.UPDATE_DATE;
+    }
+
+    @Override
+    public Field<String> field11() {
+        return LcHeaderConf.LC_HEADER_CONF.STATUS;
     }
 
     @Override
@@ -132,12 +267,47 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
 
     @Override
     public String component3() {
-        return getLogoFileUrl();
+        return getRgbColor();
     }
 
     @Override
     public String component4() {
+        return getLogoFileUrl();
+    }
+
+    @Override
+    public String component5() {
         return getBgFileUrl();
+    }
+
+    @Override
+    public Byte component6() {
+        return getDelFlag();
+    }
+
+    @Override
+    public String component7() {
+        return getCreateBy();
+    }
+
+    @Override
+    public LocalDateTime component8() {
+        return getCreateDate();
+    }
+
+    @Override
+    public String component9() {
+        return getUpdateBy();
+    }
+
+    @Override
+    public LocalDateTime component10() {
+        return getUpdateDate();
+    }
+
+    @Override
+    public String component11() {
+        return getStatus();
     }
 
     @Override
@@ -152,12 +322,47 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
 
     @Override
     public String value3() {
-        return getLogoFileUrl();
+        return getRgbColor();
     }
 
     @Override
     public String value4() {
+        return getLogoFileUrl();
+    }
+
+    @Override
+    public String value5() {
         return getBgFileUrl();
+    }
+
+    @Override
+    public Byte value6() {
+        return getDelFlag();
+    }
+
+    @Override
+    public String value7() {
+        return getCreateBy();
+    }
+
+    @Override
+    public LocalDateTime value8() {
+        return getCreateDate();
+    }
+
+    @Override
+    public String value9() {
+        return getUpdateBy();
+    }
+
+    @Override
+    public LocalDateTime value10() {
+        return getUpdateDate();
+    }
+
+    @Override
+    public String value11() {
+        return getStatus();
     }
 
     @Override
@@ -174,22 +379,71 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
 
     @Override
     public LcHeaderConfRecord value3(String value) {
-        setLogoFileUrl(value);
+        setRgbColor(value);
         return this;
     }
 
     @Override
     public LcHeaderConfRecord value4(String value) {
+        setLogoFileUrl(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value5(String value) {
         setBgFileUrl(value);
         return this;
     }
 
     @Override
-    public LcHeaderConfRecord values(Long value1, String value2, String value3, String value4) {
+    public LcHeaderConfRecord value6(Byte value) {
+        setDelFlag(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value7(String value) {
+        setCreateBy(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value8(LocalDateTime value) {
+        setCreateDate(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value9(String value) {
+        setUpdateBy(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value10(LocalDateTime value) {
+        setUpdateDate(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord value11(String value) {
+        setStatus(value);
+        return this;
+    }
+
+    @Override
+    public LcHeaderConfRecord values(Long value1, String value2, String value3, String value4, String value5, Byte value6, String value7, LocalDateTime value8, String value9, LocalDateTime value10, String value11) {
         value1(value1);
         value2(value2);
         value3(value3);
         value4(value4);
+        value5(value5);
+        value6(value6);
+        value7(value7);
+        value8(value8);
+        value9(value9);
+        value10(value10);
+        value11(value11);
         return this;
     }
 
@@ -207,12 +461,19 @@ public class LcHeaderConfRecord extends UpdatableRecordImpl<LcHeaderConfRecord> 
     /**
      * Create a detached, initialised LcHeaderConfRecord
      */
-    public LcHeaderConfRecord(Long id, String headerName, String logoFileUrl, String bgFileUrl) {
+    public LcHeaderConfRecord(Long id, String headerName, String rgbColor, String logoFileUrl, String bgFileUrl, Byte delFlag, String createBy, LocalDateTime createDate, String updateBy, LocalDateTime updateDate, String status) {
         super(LcHeaderConf.LC_HEADER_CONF);
 
         set(0, id);
         set(1, headerName);
-        set(2, logoFileUrl);
-        set(3, bgFileUrl);
+        set(2, rgbColor);
+        set(3, logoFileUrl);
+        set(4, bgFileUrl);
+        set(5, delFlag);
+        set(6, createBy);
+        set(7, createDate);
+        set(8, updateBy);
+        set(9, updateDate);
+        set(10, status);
     }
 }

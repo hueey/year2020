@@ -16,7 +16,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row12;
+import org.jooq.Row13;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -32,7 +32,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcAppModuleConf extends TableImpl<LcAppModuleConfRecord> {
 
-    private static final long serialVersionUID = -1048566804;
+    private static final long serialVersionUID = 397430855;
 
     /**
      * The reference instance of <code>lc.lc_app_module_conf</code>
@@ -81,6 +81,11 @@ public class LcAppModuleConf extends TableImpl<LcAppModuleConfRecord> {
      * The column <code>lc.lc_app_module_conf.remark</code>. 备注
      */
     public final TableField<LcAppModuleConfRecord, String> REMARK = createField(DSL.name("remark"), org.jooq.impl.SQLDataType.VARCHAR(255), this, "备注");
+
+    /**
+     * The column <code>lc.lc_app_module_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public final TableField<LcAppModuleConfRecord, String> STATUS = createField(DSL.name("status"), org.jooq.impl.SQLDataType.VARCHAR(2), this, "配置状态 1：启用 0：不启用");
 
     /**
      * The column <code>lc.lc_app_module_conf.del_flag</code>. 逻辑删除(默认0正常，1文件已被物理删除)
@@ -187,11 +192,11 @@ public class LcAppModuleConf extends TableImpl<LcAppModuleConfRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row12 type methods
+    // Row13 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
-        return (Row12) super.fieldsRow();
+    public Row13<Long, String, String, String, String, Integer, String, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 }

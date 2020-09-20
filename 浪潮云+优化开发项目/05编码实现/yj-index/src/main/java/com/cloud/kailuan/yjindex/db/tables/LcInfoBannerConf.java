@@ -16,7 +16,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row12;
+import org.jooq.Row13;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -32,7 +32,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcInfoBannerConf extends TableImpl<LcInfoBannerConfRecord> {
 
-    private static final long serialVersionUID = -1574245812;
+    private static final long serialVersionUID = -1518529685;
 
     /**
      * The reference instance of <code>lc.lc_info_banner_conf</code>
@@ -106,6 +106,11 @@ public class LcInfoBannerConf extends TableImpl<LcInfoBannerConfRecord> {
      * The column <code>lc.lc_info_banner_conf.update_date</code>. 更新时间
      */
     public final TableField<LcInfoBannerConfRecord, LocalDateTime> UPDATE_DATE = createField(DSL.name("update_date"), org.jooq.impl.SQLDataType.LOCALDATETIME, this, "更新时间");
+
+    /**
+     * The column <code>lc.lc_info_banner_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public final TableField<LcInfoBannerConfRecord, String> STATUS = createField(DSL.name("status"), org.jooq.impl.SQLDataType.VARCHAR(2), this, "配置状态 1：启用 0：不启用");
 
     /**
      * Create a <code>lc.lc_info_banner_conf</code> table reference
@@ -187,11 +192,11 @@ public class LcInfoBannerConf extends TableImpl<LcInfoBannerConfRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row12 type methods
+    // Row13 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
-        return (Row12) super.fieldsRow();
+    public Row13<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 }

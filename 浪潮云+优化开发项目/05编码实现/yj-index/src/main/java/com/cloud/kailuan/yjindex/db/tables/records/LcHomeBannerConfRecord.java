@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record12;
-import org.jooq.Row12;
+import org.jooq.Record13;
+import org.jooq.Row13;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -19,9 +19,9 @@ import org.jooq.impl.UpdatableRecordImpl;
  * 首页banner图广告配置
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConfRecord> implements Record12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> {
+public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConfRecord> implements Record13<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime, String> {
 
-    private static final long serialVersionUID = -13477350;
+    private static final long serialVersionUID = 231884338;
 
     /**
      * Setter for <code>lc.lc_home_banner_conf.id</code>.
@@ -191,6 +191,20 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
         return (LocalDateTime) get(11);
     }
 
+    /**
+     * Setter for <code>lc.lc_home_banner_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public void setStatus(String value) {
+        set(12, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_home_banner_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public String getStatus() {
+        return (String) get(12);
+    }
+
     // -------------------------------------------------------------------------
     // Primary key information
     // -------------------------------------------------------------------------
@@ -201,17 +215,17 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     }
 
     // -------------------------------------------------------------------------
-    // Record12 type implementation
+    // Record13 type implementation
     // -------------------------------------------------------------------------
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
-        return (Row12) super.fieldsRow();
+    public Row13<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> valuesRow() {
-        return (Row12) super.valuesRow();
+    public Row13<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime, String> valuesRow() {
+        return (Row13) super.valuesRow();
     }
 
     @Override
@@ -275,6 +289,11 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     }
 
     @Override
+    public Field<String> field13() {
+        return LcHomeBannerConf.LC_HOME_BANNER_CONF.STATUS;
+    }
+
+    @Override
     public Long component1() {
         return getId();
     }
@@ -335,6 +354,11 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     }
 
     @Override
+    public String component13() {
+        return getStatus();
+    }
+
+    @Override
     public Long value1() {
         return getId();
     }
@@ -392,6 +416,11 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     @Override
     public LocalDateTime value12() {
         return getUpdateDate();
+    }
+
+    @Override
+    public String value13() {
+        return getStatus();
     }
 
     @Override
@@ -467,7 +496,13 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     }
 
     @Override
-    public LcHomeBannerConfRecord values(Long value1, String value2, String value3, String value4, String value5, Integer value6, String value7, Byte value8, String value9, LocalDateTime value10, String value11, LocalDateTime value12) {
+    public LcHomeBannerConfRecord value13(String value) {
+        setStatus(value);
+        return this;
+    }
+
+    @Override
+    public LcHomeBannerConfRecord values(Long value1, String value2, String value3, String value4, String value5, Integer value6, String value7, Byte value8, String value9, LocalDateTime value10, String value11, LocalDateTime value12, String value13) {
         value1(value1);
         value2(value2);
         value3(value3);
@@ -480,6 +515,7 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
         value10(value10);
         value11(value11);
         value12(value12);
+        value13(value13);
         return this;
     }
 
@@ -497,7 +533,7 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
     /**
      * Create a detached, initialised LcHomeBannerConfRecord
      */
-    public LcHomeBannerConfRecord(Long id, String title, String adImgUrl, String adImgLinkType, String adImgLinkUrl, Integer dispOr, String remark, Byte delFlag, String createBy, LocalDateTime createDate, String updateBy, LocalDateTime updateDate) {
+    public LcHomeBannerConfRecord(Long id, String title, String adImgUrl, String adImgLinkType, String adImgLinkUrl, Integer dispOr, String remark, Byte delFlag, String createBy, LocalDateTime createDate, String updateBy, LocalDateTime updateDate, String status) {
         super(LcHomeBannerConf.LC_HOME_BANNER_CONF);
 
         set(0, id);
@@ -512,5 +548,6 @@ public class LcHomeBannerConfRecord extends UpdatableRecordImpl<LcHomeBannerConf
         set(9, createDate);
         set(10, updateBy);
         set(11, updateDate);
+        set(12, status);
     }
 }

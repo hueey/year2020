@@ -28,7 +28,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
 
-    private static final long serialVersionUID = 401251025;
+    private static final long serialVersionUID = -1247902354;
 
     /**
      * The reference instance of <code>lc.lc_file_info</code>
@@ -81,7 +81,7 @@ public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
     /**
      * The column <code>lc.lc_file_info.del_flag</code>. 逻辑删除(默认0正常，1文件已被物理删除)
      */
-    public final TableField<LcFileInfoRecord, String> DEL_FLAG = createField(DSL.name("del_flag"), org.jooq.impl.SQLDataType.VARCHAR(2).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.VARCHAR)), this, "逻辑删除(默认0正常，1文件已被物理删除)");
+    public final TableField<LcFileInfoRecord, Byte> DEL_FLAG = createField(DSL.name("del_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "逻辑删除(默认0正常，1文件已被物理删除)");
 
     /**
      * The column <code>lc.lc_file_info.create_by</code>. 创建人
@@ -182,7 +182,7 @@ public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row13<Long, String, String, String, String, String, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+    public Row13<Long, String, String, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
         return (Row13) super.fieldsRow();
     }
 }

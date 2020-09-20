@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 import org.jooq.Field;
 import org.jooq.Record1;
-import org.jooq.Record12;
-import org.jooq.Row12;
+import org.jooq.Record13;
+import org.jooq.Row13;
 import org.jooq.impl.UpdatableRecordImpl;
 
 
@@ -19,9 +19,9 @@ import org.jooq.impl.UpdatableRecordImpl;
  * app应用模块配置
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRecord> implements Record12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> {
+public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRecord> implements Record13<Long, String, String, String, String, Integer, String, String, Byte, String, LocalDateTime, String, LocalDateTime> {
 
-    private static final long serialVersionUID = -553186038;
+    private static final long serialVersionUID = 14266554;
 
     /**
      * Setter for <code>lc.lc_app_module_conf.id</code>.
@@ -122,73 +122,87 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     /**
+     * Setter for <code>lc.lc_app_module_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public void setStatus(String value) {
+        set(7, value);
+    }
+
+    /**
+     * Getter for <code>lc.lc_app_module_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public String getStatus() {
+        return (String) get(7);
+    }
+
+    /**
      * Setter for <code>lc.lc_app_module_conf.del_flag</code>. 逻辑删除(默认0正常，1文件已被物理删除)
      */
     public void setDelFlag(Byte value) {
-        set(7, value);
+        set(8, value);
     }
 
     /**
      * Getter for <code>lc.lc_app_module_conf.del_flag</code>. 逻辑删除(默认0正常，1文件已被物理删除)
      */
     public Byte getDelFlag() {
-        return (Byte) get(7);
+        return (Byte) get(8);
     }
 
     /**
      * Setter for <code>lc.lc_app_module_conf.create_by</code>. 创建人
      */
     public void setCreateBy(String value) {
-        set(8, value);
+        set(9, value);
     }
 
     /**
      * Getter for <code>lc.lc_app_module_conf.create_by</code>. 创建人
      */
     public String getCreateBy() {
-        return (String) get(8);
+        return (String) get(9);
     }
 
     /**
      * Setter for <code>lc.lc_app_module_conf.create_date</code>. 创建时间
      */
     public void setCreateDate(LocalDateTime value) {
-        set(9, value);
+        set(10, value);
     }
 
     /**
      * Getter for <code>lc.lc_app_module_conf.create_date</code>. 创建时间
      */
     public LocalDateTime getCreateDate() {
-        return (LocalDateTime) get(9);
+        return (LocalDateTime) get(10);
     }
 
     /**
      * Setter for <code>lc.lc_app_module_conf.update_by</code>. 更新人
      */
     public void setUpdateBy(String value) {
-        set(10, value);
+        set(11, value);
     }
 
     /**
      * Getter for <code>lc.lc_app_module_conf.update_by</code>. 更新人
      */
     public String getUpdateBy() {
-        return (String) get(10);
+        return (String) get(11);
     }
 
     /**
      * Setter for <code>lc.lc_app_module_conf.update_date</code>. 更新时间
      */
     public void setUpdateDate(LocalDateTime value) {
-        set(11, value);
+        set(12, value);
     }
 
     /**
      * Getter for <code>lc.lc_app_module_conf.update_date</code>. 更新时间
      */
     public LocalDateTime getUpdateDate() {
-        return (LocalDateTime) get(11);
+        return (LocalDateTime) get(12);
     }
 
     // -------------------------------------------------------------------------
@@ -201,17 +215,17 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     // -------------------------------------------------------------------------
-    // Record12 type implementation
+    // Record13 type implementation
     // -------------------------------------------------------------------------
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
-        return (Row12) super.fieldsRow();
+    public Row13<Long, String, String, String, String, Integer, String, String, Byte, String, LocalDateTime, String, LocalDateTime> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 
     @Override
-    public Row12<Long, String, String, String, String, Integer, String, Byte, String, LocalDateTime, String, LocalDateTime> valuesRow() {
-        return (Row12) super.valuesRow();
+    public Row13<Long, String, String, String, String, Integer, String, String, Byte, String, LocalDateTime, String, LocalDateTime> valuesRow() {
+        return (Row13) super.valuesRow();
     }
 
     @Override
@@ -250,27 +264,32 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     @Override
-    public Field<Byte> field8() {
+    public Field<String> field8() {
+        return LcAppModuleConf.LC_APP_MODULE_CONF.STATUS;
+    }
+
+    @Override
+    public Field<Byte> field9() {
         return LcAppModuleConf.LC_APP_MODULE_CONF.DEL_FLAG;
     }
 
     @Override
-    public Field<String> field9() {
+    public Field<String> field10() {
         return LcAppModuleConf.LC_APP_MODULE_CONF.CREATE_BY;
     }
 
     @Override
-    public Field<LocalDateTime> field10() {
+    public Field<LocalDateTime> field11() {
         return LcAppModuleConf.LC_APP_MODULE_CONF.CREATE_DATE;
     }
 
     @Override
-    public Field<String> field11() {
+    public Field<String> field12() {
         return LcAppModuleConf.LC_APP_MODULE_CONF.UPDATE_BY;
     }
 
     @Override
-    public Field<LocalDateTime> field12() {
+    public Field<LocalDateTime> field13() {
         return LcAppModuleConf.LC_APP_MODULE_CONF.UPDATE_DATE;
     }
 
@@ -310,27 +329,32 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     @Override
-    public Byte component8() {
+    public String component8() {
+        return getStatus();
+    }
+
+    @Override
+    public Byte component9() {
         return getDelFlag();
     }
 
     @Override
-    public String component9() {
+    public String component10() {
         return getCreateBy();
     }
 
     @Override
-    public LocalDateTime component10() {
+    public LocalDateTime component11() {
         return getCreateDate();
     }
 
     @Override
-    public String component11() {
+    public String component12() {
         return getUpdateBy();
     }
 
     @Override
-    public LocalDateTime component12() {
+    public LocalDateTime component13() {
         return getUpdateDate();
     }
 
@@ -370,27 +394,32 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     @Override
-    public Byte value8() {
+    public String value8() {
+        return getStatus();
+    }
+
+    @Override
+    public Byte value9() {
         return getDelFlag();
     }
 
     @Override
-    public String value9() {
+    public String value10() {
         return getCreateBy();
     }
 
     @Override
-    public LocalDateTime value10() {
+    public LocalDateTime value11() {
         return getCreateDate();
     }
 
     @Override
-    public String value11() {
+    public String value12() {
         return getUpdateBy();
     }
 
     @Override
-    public LocalDateTime value12() {
+    public LocalDateTime value13() {
         return getUpdateDate();
     }
 
@@ -437,37 +466,43 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     }
 
     @Override
-    public LcAppModuleConfRecord value8(Byte value) {
+    public LcAppModuleConfRecord value8(String value) {
+        setStatus(value);
+        return this;
+    }
+
+    @Override
+    public LcAppModuleConfRecord value9(Byte value) {
         setDelFlag(value);
         return this;
     }
 
     @Override
-    public LcAppModuleConfRecord value9(String value) {
+    public LcAppModuleConfRecord value10(String value) {
         setCreateBy(value);
         return this;
     }
 
     @Override
-    public LcAppModuleConfRecord value10(LocalDateTime value) {
+    public LcAppModuleConfRecord value11(LocalDateTime value) {
         setCreateDate(value);
         return this;
     }
 
     @Override
-    public LcAppModuleConfRecord value11(String value) {
+    public LcAppModuleConfRecord value12(String value) {
         setUpdateBy(value);
         return this;
     }
 
     @Override
-    public LcAppModuleConfRecord value12(LocalDateTime value) {
+    public LcAppModuleConfRecord value13(LocalDateTime value) {
         setUpdateDate(value);
         return this;
     }
 
     @Override
-    public LcAppModuleConfRecord values(Long value1, String value2, String value3, String value4, String value5, Integer value6, String value7, Byte value8, String value9, LocalDateTime value10, String value11, LocalDateTime value12) {
+    public LcAppModuleConfRecord values(Long value1, String value2, String value3, String value4, String value5, Integer value6, String value7, String value8, Byte value9, String value10, LocalDateTime value11, String value12, LocalDateTime value13) {
         value1(value1);
         value2(value2);
         value3(value3);
@@ -480,6 +515,7 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
         value10(value10);
         value11(value11);
         value12(value12);
+        value13(value13);
         return this;
     }
 
@@ -497,7 +533,7 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
     /**
      * Create a detached, initialised LcAppModuleConfRecord
      */
-    public LcAppModuleConfRecord(Long id, String title, String icoUrl, String icoLinkType, String icoLinkUrl, Integer dispOr, String remark, Byte delFlag, String createBy, LocalDateTime createDate, String updateBy, LocalDateTime updateDate) {
+    public LcAppModuleConfRecord(Long id, String title, String icoUrl, String icoLinkType, String icoLinkUrl, Integer dispOr, String remark, String status, Byte delFlag, String createBy, LocalDateTime createDate, String updateBy, LocalDateTime updateDate) {
         super(LcAppModuleConf.LC_APP_MODULE_CONF);
 
         set(0, id);
@@ -507,10 +543,11 @@ public class LcAppModuleConfRecord extends UpdatableRecordImpl<LcAppModuleConfRe
         set(4, icoLinkUrl);
         set(5, dispOr);
         set(6, remark);
-        set(7, delFlag);
-        set(8, createBy);
-        set(9, createDate);
-        set(10, updateBy);
-        set(11, updateDate);
+        set(7, status);
+        set(8, delFlag);
+        set(9, createBy);
+        set(10, createDate);
+        set(11, updateBy);
+        set(12, updateDate);
     }
 }

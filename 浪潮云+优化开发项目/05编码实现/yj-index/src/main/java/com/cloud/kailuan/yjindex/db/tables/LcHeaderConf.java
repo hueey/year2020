@@ -8,6 +8,7 @@ import com.cloud.kailuan.yjindex.db.Keys;
 import com.cloud.kailuan.yjindex.db.Lc;
 import com.cloud.kailuan.yjindex.db.tables.records.LcHeaderConfRecord;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row4;
+import org.jooq.Row11;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -31,7 +32,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
 
-    private static final long serialVersionUID = 1876542022;
+    private static final long serialVersionUID = 1746788707;
 
     /**
      * The reference instance of <code>lc.lc_header_conf</code>
@@ -57,6 +58,11 @@ public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
     public final TableField<LcHeaderConfRecord, String> HEADER_NAME = createField(DSL.name("header_name"), org.jooq.impl.SQLDataType.VARCHAR(20), this, "头部名称");
 
     /**
+     * The column <code>lc.lc_header_conf.rgb_color</code>. 颜色值
+     */
+    public final TableField<LcHeaderConfRecord, String> RGB_COLOR = createField(DSL.name("rgb_color"), org.jooq.impl.SQLDataType.VARCHAR(10), this, "颜色值");
+
+    /**
      * The column <code>lc.lc_header_conf.logo_file_url</code>.
      */
     public final TableField<LcHeaderConfRecord, String> LOGO_FILE_URL = createField(DSL.name("logo_file_url"), org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
@@ -65,6 +71,36 @@ public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
      * The column <code>lc.lc_header_conf.bg_file_url</code>.
      */
     public final TableField<LcHeaderConfRecord, String> BG_FILE_URL = createField(DSL.name("bg_file_url"), org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.del_flag</code>.
+     */
+    public final TableField<LcHeaderConfRecord, Byte> DEL_FLAG = createField(DSL.name("del_flag"), org.jooq.impl.SQLDataType.TINYINT, this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.create_by</code>.
+     */
+    public final TableField<LcHeaderConfRecord, String> CREATE_BY = createField(DSL.name("create_by"), org.jooq.impl.SQLDataType.VARCHAR(20), this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.create_date</code>.
+     */
+    public final TableField<LcHeaderConfRecord, LocalDateTime> CREATE_DATE = createField(DSL.name("create_date"), org.jooq.impl.SQLDataType.LOCALDATETIME, this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.update_by</code>.
+     */
+    public final TableField<LcHeaderConfRecord, String> UPDATE_BY = createField(DSL.name("update_by"), org.jooq.impl.SQLDataType.VARCHAR(20), this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.update_date</code>.
+     */
+    public final TableField<LcHeaderConfRecord, LocalDateTime> UPDATE_DATE = createField(DSL.name("update_date"), org.jooq.impl.SQLDataType.LOCALDATETIME, this, "");
+
+    /**
+     * The column <code>lc.lc_header_conf.status</code>. 配置状态 1：启用 0：不启用
+     */
+    public final TableField<LcHeaderConfRecord, String> STATUS = createField(DSL.name("status"), org.jooq.impl.SQLDataType.VARCHAR(2), this, "配置状态 1：启用 0：不启用");
 
     /**
      * Create a <code>lc.lc_header_conf</code> table reference
@@ -115,6 +151,11 @@ public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
     }
 
     @Override
+    public TableField<LcHeaderConfRecord, LocalDateTime> getRecordTimestamp() {
+        return UPDATE_DATE;
+    }
+
+    @Override
     public LcHeaderConf as(String alias) {
         return new LcHeaderConf(DSL.name(alias), this);
     }
@@ -141,11 +182,11 @@ public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row4 type methods
+    // Row11 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row4<Long, String, String, String> fieldsRow() {
-        return (Row4) super.fieldsRow();
+    public Row11<Long, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row11) super.fieldsRow();
     }
 }
