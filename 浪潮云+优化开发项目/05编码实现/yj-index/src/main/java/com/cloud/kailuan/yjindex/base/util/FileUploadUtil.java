@@ -26,6 +26,18 @@ public class FileUploadUtil {
         return newBasePath;
     }
 
+    /**
+     * 返回构建的二级目录路径
+     * @param filename
+     * @return
+     */
+    public static String makeSubPath(String filename) {
+        int hashcode = filename.hashCode();
+        int dir1 = hashcode & 0xf;//生成一级目录取哈希码的后4为值范围：0-15
+        int dir2 = (hashcode & 0xf0) >> 4;//二级目录  可以根据需要多分级
+        return "/" + dir1 + "/" + dir2 ;
+    }
+
 
     public static String makeFilename(String filename) {
         if( StrUtil.isBlank( filename ) ){

@@ -14,7 +14,7 @@ public class LcFileInfoUploadVo {
     private long id;
 
     //文件编号，规则是业务类型+随便编号
-    private String file_no;
+    private String fileNo;
 
     //业务模块类型
     private String bizModuleType;
