@@ -13,7 +13,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row11;
+import org.jooq.Row13;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -28,7 +28,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
 
-    private static final long serialVersionUID = 812943441;
+    private static final long serialVersionUID = 401251025;
 
     /**
      * The reference instance of <code>lc.lc_file_info</code>
@@ -47,6 +47,16 @@ public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
      * The column <code>lc.lc_file_info.id</code>.
      */
     public final TableField<LcFileInfoRecord, Long> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.BIGINT, this, "");
+
+    /**
+     * The column <code>lc.lc_file_info.file_no</code>. 文件编号，规则是业务类型+随便编号
+     */
+    public final TableField<LcFileInfoRecord, String> FILE_NO = createField(DSL.name("file_no"), org.jooq.impl.SQLDataType.VARCHAR(64), this, "文件编号，规则是业务类型+随便编号");
+
+    /**
+     * The column <code>lc.lc_file_info.biz_module_type</code>. 业务类型
+     */
+    public final TableField<LcFileInfoRecord, String> BIZ_MODULE_TYPE = createField(DSL.name("biz_module_type"), org.jooq.impl.SQLDataType.VARCHAR(8), this, "业务类型");
 
     /**
      * The column <code>lc.lc_file_info.original_name</code>. 文件原始名字
@@ -71,7 +81,7 @@ public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
     /**
      * The column <code>lc.lc_file_info.del_flag</code>. 逻辑删除(默认0正常，1文件已被物理删除)
      */
-    public final TableField<LcFileInfoRecord, Byte> DEL_FLAG = createField(DSL.name("del_flag"), org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "逻辑删除(默认0正常，1文件已被物理删除)");
+    public final TableField<LcFileInfoRecord, String> DEL_FLAG = createField(DSL.name("del_flag"), org.jooq.impl.SQLDataType.VARCHAR(2).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.VARCHAR)), this, "逻辑删除(默认0正常，1文件已被物理删除)");
 
     /**
      * The column <code>lc.lc_file_info.create_by</code>. 创建人
@@ -168,11 +178,11 @@ public class LcFileInfo extends TableImpl<LcFileInfoRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row11 type methods
+    // Row13 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row11<Long, String, String, String, String, Byte, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
-        return (Row11) super.fieldsRow();
+    public Row13<Long, String, String, String, String, String, String, String, String, LocalDateTime, String, LocalDateTime, String> fieldsRow() {
+        return (Row13) super.fieldsRow();
     }
 }

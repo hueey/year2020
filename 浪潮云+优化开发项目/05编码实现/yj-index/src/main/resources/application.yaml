@@ -30,6 +30,9 @@ spring:
             redirect-uri: http://116.62.16.146:8080
             client-authentication-method: basic
             authorization-grant-type: authorization_code
+file-server:
+  dir: D:/uploadfile
+
 logging:
   level:
     root: info

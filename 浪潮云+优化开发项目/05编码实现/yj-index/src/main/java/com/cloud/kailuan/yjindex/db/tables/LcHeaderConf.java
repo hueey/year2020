@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
 
-    private static final long serialVersionUID = -2083425972;
+    private static final long serialVersionUID = 1876542022;
 
     /**
      * The reference instance of <code>lc.lc_header_conf</code>
@@ -59,12 +59,12 @@ public class LcHeaderConf extends TableImpl<LcHeaderConfRecord> {
     /**
      * The column <code>lc.lc_header_conf.logo_file_url</code>.
      */
-    public final TableField<LcHeaderConfRecord, String> LOGO_FILE_URL = createField(DSL.name("logo_file_url"), org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
+    public final TableField<LcHeaderConfRecord, String> LOGO_FILE_URL = createField(DSL.name("logo_file_url"), org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>lc.lc_header_conf.bg_file_url</code>.
      */
-    public final TableField<LcHeaderConfRecord, String> BG_FILE_URL = createField(DSL.name("bg_file_url"), org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
+    public final TableField<LcHeaderConfRecord, String> BG_FILE_URL = createField(DSL.name("bg_file_url"), org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * Create a <code>lc.lc_header_conf</code> table reference
