@@ -28,6 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'com.baomidou:mybatis-plus-core:3.4.0'
     compile group: 'cn.hutool', name: 'hutool-core', version: '5.4.3'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
