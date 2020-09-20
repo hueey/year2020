@@ -38,7 +38,8 @@ public class LcAppInfoVo {
     @ApiModelProperty(value = "备注", required = false)
     private String        remark;
 
-//    private Integer       delFlag;
+    @ApiModelProperty(value = "删除标记", required = false)
+    private Integer       delFlag;
 //    private String        createBy;
 //    private LocalDateTime createDate;
 //    private String        updateBy;

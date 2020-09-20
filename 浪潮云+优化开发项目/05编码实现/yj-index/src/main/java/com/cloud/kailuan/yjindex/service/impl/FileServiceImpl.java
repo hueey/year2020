@@ -6,7 +6,7 @@ import com.cloud.kailuan.yjindex.base.util.FileUploadUtil;
 import com.cloud.kailuan.yjindex.dao.ILcFileInfoDao;
 import com.cloud.kailuan.yjindex.db.tables.records.LcFileInfoRecord;
 import com.cloud.kailuan.yjindex.service.IFileService;
-import com.cloud.kailuan.yjindex.service.IIDGenerateService;
+import com.cloud.kailuan.yjindex.dao.IIDGenerate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,7 +35,7 @@ public class FileServiceImpl implements IFileService {
     ILcFileInfoDao lcFileInfoDao;
 
     @Autowired
-    IIDGenerateService idGenerateService;
+    IIDGenerate idGenerateService;
 
     @Override
     public LcFileInfoRecord upload(String bizModuleType, MultipartFile file) {

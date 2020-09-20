@@ -32,10 +32,7 @@ public class SysConfigController {
     @PostMapping("/saveHomeConfig")
     @ResponseBody
     public R<LcHomeConfigVo> saveHomeConfig(@RequestBody LcHomeConfigVo lcHomeConfigVo) {
-        sysConfigService.saveHomeConfig( lcHomeConfigVo.getLcHeaderConfVo(),
-                lcHomeConfigVo.getLcHomeBannerConfVos(),
-                lcHomeConfigVo.getLcAppModuleConfVos(),
-                lcHomeConfigVo.getLcInfoBannerConfVos() );
+        sysConfigService.saveHomeConfig( lcHomeConfigVo );
         return R.ok( lcHomeConfigVo );
     }
 

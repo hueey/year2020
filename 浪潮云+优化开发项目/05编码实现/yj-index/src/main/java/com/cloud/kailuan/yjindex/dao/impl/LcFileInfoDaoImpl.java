@@ -1,11 +1,8 @@
 package com.cloud.kailuan.yjindex.dao.impl;
 
-import cn.hutool.core.lang.generator.UUIDGenerator;
 import com.cloud.kailuan.yjindex.dao.ILcFileInfoDao;
 import com.cloud.kailuan.yjindex.db.Tables;
-import com.cloud.kailuan.yjindex.db.tables.LcFileInfo;
 import com.cloud.kailuan.yjindex.db.tables.records.LcFileInfoRecord;
-import com.cloud.kailuan.yjindex.entity.LcFileInfoEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;

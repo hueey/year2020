@@ -2,7 +2,7 @@ package com.cloud.kailuan.yjindex.config;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
-import com.cloud.kailuan.yjindex.service.IIDGenerateService;
+import com.cloud.kailuan.yjindex.dao.IIDGenerate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,8 +18,8 @@ public class IdGenerateConfig {
     Snowflake snowflake = IdUtil.getSnowflake(1, 1);
 
     @Bean
-    public IIDGenerateService createGenerateService(){
-        IIDGenerateService generateService = ()->{
+    public IIDGenerate createGenerate(){
+        IIDGenerate generateService = ()->{
             return snowflake.nextId();
         };
         return generateService;
