@@ -14,20 +14,20 @@ spring:
     oauth2:
       client:
         provider:
-          customer:
+          my-oauth-provider:
             authorization-uri: http://cloud-id.kailuan.com.cn/oauth2.0/authorize
             token-uri: http://cloud-id.kailuan.com.cn/oauth2.0/token
             user-info-uri: http://cloud-id.kailuan.com.cn/oauth2.0/user-info
             user-info-authentication-method: header
-            user-name-attrivute: name
+            user-name-attribute: first_name
         registration:
           app:
-            client-id: f8abee75-ca6b-42da-92f4-aed5101947b3
-            client-secret: 8f80c265-03b1-4268-80df-90fba1a4b6c8
+            client-id: 0568c540-0456-4eb0-95e9-319ebe6aaf4a
+            client-secret: 91312051-6b42-4001-a17e-af2b86bc1c0a
             client-name: app
-            provider: customer
+            provider: my-oauth-provider
             scope: user
-            redirect-uri: http://localhost:8080/test/test
+            redirect-uri: http://116.62.16.146:8080/login/oauth2/code/app
             client-authentication-method: basic
             authorization-grant-type: authorization_code
 file-server:
