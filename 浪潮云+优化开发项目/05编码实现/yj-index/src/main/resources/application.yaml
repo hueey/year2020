@@ -32,6 +32,7 @@ spring:
             authorization-grant-type: authorization_code
 file-server:
   dir: D:/uploadfile
+  context-path: /files
 
 logging:
   level:

@@ -31,11 +31,11 @@ public class FileController {
 
     @PostMapping("/uploadFile")
     @ResponseBody
-    public R upload(@RequestParam("bizModuleType") String bizModuleType,@RequestParam("file") MultipartFile file) {
+    public R upload(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return  R.fail("上传失败，请选择文件");
         }
-
+        String bizModuleType = "HC001";
         LcFileInfoRecord upload = fileService.upload(bizModuleType, file);
         LcFileInfoUploadVo LcFileInfoUploadVo = new LcFileInfoUploadVo();
         BeanUtils.copyProperties( upload, LcFileInfoUploadVo );

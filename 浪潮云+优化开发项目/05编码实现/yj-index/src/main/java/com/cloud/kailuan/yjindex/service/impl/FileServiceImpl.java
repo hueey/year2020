@@ -31,6 +31,9 @@ public class FileServiceImpl implements IFileService {
     @Value("${file-server.dir}")
     private String fileDirPath;
 
+    @Value("${file-server.context-path}")
+    private String contextPath;
+
     @Autowired
     ILcFileInfoDao lcFileInfoDao;
 
@@ -58,7 +61,7 @@ public class FileServiceImpl implements IFileService {
         lcFileInfoRecord.setOriginalName( fileName );
         lcFileInfoRecord.setNewName( newFileName );
         lcFileInfoRecord.setFilePath( dest.getAbsolutePath() );
-        lcFileInfoRecord.setRelativePath( subPath +"/"+newFileName );
+        lcFileInfoRecord.setRelativePath( contextPath + subPath +"/"+newFileName );
         lcFileInfoRecord.setDelFlag((byte)1);
         lcFileInfoRecord.setCreateBy("");
         lcFileInfoRecord.setCreateDate(LocalDateTime.now());
