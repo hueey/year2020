@@ -3,10 +3,7 @@ package com.cloud.kailuan.yjindex.dao.impl;
 import com.cloud.kailuan.yjindex.dao.IIDGenerate;
 import com.cloud.kailuan.yjindex.dao.ISysConfigDao;
 import com.cloud.kailuan.yjindex.db.Tables;
-import com.cloud.kailuan.yjindex.db.tables.LcAppModuleConf;
-import com.cloud.kailuan.yjindex.db.tables.LcHeaderConf;
-import com.cloud.kailuan.yjindex.db.tables.LcHomeBannerConf;
-import com.cloud.kailuan.yjindex.db.tables.LcInfoBannerConf;
+import com.cloud.kailuan.yjindex.db.tables.*;
 import com.cloud.kailuan.yjindex.db.tables.records.*;
 import lombok.extern.slf4j.Slf4j;
 import org.jooq.*;
@@ -147,6 +144,15 @@ public class SysConfigDaoImpl implements ISysConfigDao {
         return dsl.selectFrom(Tables.LC_INFO_BANNER_CONF)
                 .where(eq)
                 .orderBy(LcInfoBannerConf.LC_INFO_BANNER_CONF.DISP_OR.asc())
+                .fetch();
+    }
+
+    @Override
+    public List<LcAppInfoRecord> selectLcAppInfoRecords() {
+        Condition eq = DSL.field(LcAppInfo.LC_APP_INFO.DEL_FLAG).eq((byte) 0);
+        return dsl.selectFrom(Tables.LC_APP_INFO)
+                .where( eq )
+                .orderBy( LcAppInfo.LC_APP_INFO.CREATE_DATE.desc() )
                 .fetch();
     }
 

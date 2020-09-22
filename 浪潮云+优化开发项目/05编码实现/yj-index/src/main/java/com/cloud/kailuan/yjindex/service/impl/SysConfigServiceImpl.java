@@ -311,7 +311,20 @@ public class SysConfigServiceImpl implements ISysConfigService {
 
     @Override
     public List<LcAppInfoVo> getInstallPackageInfos() {
-        return null;
+        List<LcAppInfoVo> lcAppInfoVos = Lists.newArrayList();
+        List<LcAppInfoRecord> appInfoRecords = sysConfigDao.selectLcAppInfoRecords( );
+        for (LcAppInfoRecord appInfoRecord : appInfoRecords) {
+            LcAppInfoVo lcAppInfoVo = new LcAppInfoVo();
+            lcAppInfoVo.setId( appInfoRecord.getId() );
+            lcAppInfoVo.setAppUrl( appInfoRecord.getAppUrl() );
+            lcAppInfoVo.setAppVersion( appInfoRecord.getAppVersion() );
+            lcAppInfoVo.setPlatformType( appInfoRecord.getPlatformType() );
+            lcAppInfoVo.setVersionInfo( lcAppInfoVo.getVersionInfo() );
+            lcAppInfoVo.setRemark( appInfoRecord.getRemark() );
+            lcAppInfoVos.add(lcAppInfoVo);
+        }
+
+        return lcAppInfoVos;
     }
 
 }

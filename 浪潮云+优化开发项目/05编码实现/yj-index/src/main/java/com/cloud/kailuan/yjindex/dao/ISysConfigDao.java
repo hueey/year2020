@@ -25,4 +25,6 @@ public interface ISysConfigDao {
 
     List<LcInfoBannerConfRecord> selectLcInfoBannerConfRecords();
 
+    List<LcAppInfoRecord> selectLcAppInfoRecords();
+
 }
