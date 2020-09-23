@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   application:
     name:  yj-index
@@ -8,6 +8,20 @@ spring:
     url: jdbc:mysql://116.62.16.146:3306/lc?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowMultiQueries=true
     username: ts
     password: Ts-123456
+    filters: mergeStat
+    initialSize: 1
+    maxActive: 100
+    minIdle: 1
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    maxOpenPreparedStatements: 20
+    removeAbandoned: true
+    removeAbandonedTimeout: 1800
   jooq:
     sql-dialect: mysql
   security:
