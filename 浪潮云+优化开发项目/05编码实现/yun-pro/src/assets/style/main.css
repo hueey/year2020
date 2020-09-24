@@ -1,0 +1,153 @@
+.manager-header{
+  text-align: left;
+  font-size: 15px;
+  line-height: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  background-color: #e8e6e6;
+  padding-left: 15px;
+}
+.config-item-header{
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 0px 3px #ccc;
+  height: 40px;
+  line-height: 40px;
+}
+.config-item-main{
+  margin-top: 15px;
+}
+.config-item-label{
+  padding-left: 15PX;
+  text-align: left;
+  color: #409EFF;
+}
+.config-item-1{
+  /* height: 200px; */
+  border: 1px solid #e3e3e3;
+  height: 244px;
+  box-shadow: 0px 0px 8px #c1b9b9;
+  -webkit-box-shadow: 0px 0px 8px #c1b9b9;
+  margin-left: 0px;
+  margin-top: 15px;
+}
+.config-item-2{
+  /* height: 200px; */
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 0px 8px #c1b9b9;
+  -webkit-box-shadow: 0px 0px 8px #c1b9b9;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.config-item-tools {
+  text-align: right;
+  padding-right: 10px;
+}
+.config-item-header-logo .el-form-item__content{
+  margin-left: 10px!important;
+}
+.logo-img{
+  width: 100px;
+  height: 100px;
+}
+.banner-list-li {
+  vertical-align: top;
+  display: inline-block;
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;
+  margin-left: 10px;
+}
+.banner-list-li .warpper{
+  width: 135px;
+  height: 168px;
+  border: 1px solid #eee;
+  background-color: #f9f9f9;;
+  color: #cccccc;
+  font-size: 30px;
+  /* line-height: 168px; */
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.banner-list-li img{
+  width: 135px;
+  height: 168px;
+}
+.banner-list-li .banner-list-li-tools{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 143px;
+  height: 25px;
+  background-color: rgba(210, 210, 210, 0.48);
+
+}
+.banner-list-li .banner-list-li-tools div{
+  color: #565656;
+}
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 168px;
+  height: 168px;
+  line-height: 168px;
+  text-align: center;
+}
+.avatar {
+  width: 168px;
+  height: 168px;
+  display: block;
+}
+.config-app-item{
+  width: 80px;
+  height: 85px;
+  position: relative;
+  float: left;
+}
+.config-app-item-img{
+  margin: 5px 10px;
+  width: 60px;
+  border-radius: 3px;
+  height: 60px;
+}
+.config-app-item-img img{
+  width: 60px;
+  height: 60px;
+}
+.config-app-item-tools{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.config-app-item-label{
+  font-size: 13px;
+}
+.header-item-value{
+  /* box-sizing: border-box;
+  display: flex;
+  float: left; */
+  width: calc(100% - 235px);
+}
+.config-item-1 .el-form-item{
+  box-sizing: border-box;
+  display: flex;
+  float: left;
+  /* width: calc(100% - 235px); */
+}
+.upload-bg-img{
+  display: flex;
+}
+.upload-bg-img .el-upload--text{
+  width: 130px;
+}
