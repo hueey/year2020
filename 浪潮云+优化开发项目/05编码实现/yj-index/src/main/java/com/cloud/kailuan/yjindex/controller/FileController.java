@@ -22,7 +22,7 @@ import java.io.IOException;
  */
 @RestController
 @Api(tags="文件服务")
-@RequestMapping("File")
+@RequestMapping("api/File")
 @Slf4j
 public class FileController {
 

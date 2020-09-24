@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RestController
 @Api(tags="系统配置")
-@RequestMapping("SysConfig")
+@RequestMapping("api/SysConfig")
 public class SysConfigController {
 
 
